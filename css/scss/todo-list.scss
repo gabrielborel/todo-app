@@ -1,0 +1,155 @@
+@import 'colors';
+
+.todo-list {
+   background-color: $very-light-gray;
+   border-radius: 5px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+   .list-item.deleted-task {
+      opacity: 0; 
+      transform: scale(0.5);
+      transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+
+   .list-item {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $light-grayish-blue;
+      font-weight: 700;
+
+      .complete-btn {
+         width: 22px;
+         height: 22px;
+         border-radius: 50%;
+         border: 1px solid $dark-grayish-blue;
+         background-color: transparent;
+         transition: all .2s;
+
+         &:hover {
+            cursor: pointer;
+            transform: translateY(-.2em);
+            background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+         }
+
+         &:active {
+            transform: translateY(0);
+         }
+      }
+
+      .content {
+         font-family: 'Josefin Sans', sans-serif;
+         padding-top: .3rem;
+         font-size: .9rem;
+      }
+
+      .delete-btn {
+         background: url('/images/icon-cross.svg') center no-repeat;
+         color: $very-light-gray;
+         border: none;
+         width: 22px;
+         height: 22px;
+         background-color: transparent;
+
+         &:hover {
+            cursor: pointer;
+            transform: translateY(-.2em);
+            transition: all .2s;
+         }
+      }
+   }
+
+   .list-item-done {
+      opacity: .85;
+
+      .complete-btn {
+         background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+         position: relative;
+
+         .complete-btn-check {
+            position: absolute;
+            background: url('/images/icon-check.svg') center no-repeat;
+            width: 22px;
+            height: 22px;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+         }
+      }
+         
+      .content {
+         text-decoration: line-through;
+      }
+   }
+
+   .bottom-list-area {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      font-size: .9rem;
+
+      .items-left {
+         opacity: .5;
+      }
+
+      .filters-desktop {
+         display: none;
+
+         @media (min-width: 700px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+
+            .btn {
+               border: none;
+               background-color: transparent;
+               font-weight: 700;
+               opacity: .5;
+
+               &-selected {
+                  opacity: 1;
+                  color: $bright-blue;
+                  transform: scale(1.05);
+                  transition: all .2s;
+
+                  &:hover {
+                     cursor: pointer;
+                     transform: scale(1.05);
+                     opacity: 1;
+                     transition: all .2s;
+                     color: $bright-blue;
+                  }
+               }
+      
+               &:hover {
+                  cursor: pointer;
+                  transform: scale(1.05);
+                  opacity: 1;
+                  transition: all .2s;
+                  color: $bright-blue;
+               }
+            }
+         }
+      }
+
+      .clear-completed {
+         opacity: .5;
+         font-family: 'Josefin Sans', sans-serif;
+         border: none;
+         background-color: transparent;
+         font-weight: 700;
+
+         &:hover {
+            cursor: pointer;
+            opacity: .9;
+            transition: all .2s;
+            transform: scale(1.04);
+            color: $bright-blue;
+         }
+      }
+   }
+}

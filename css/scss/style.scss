@@ -1,0 +1,254 @@
+@use 'header';
+@use 'input-area';
+@use 'todo-list';
+@import 'colors';
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: all .5s ease; 
+
+   &.dark-mode {
+      background-color: $very-dark-blue;
+
+      .app {   
+         .background {
+            background: url('/images/bg-mobile-dark.jpg') center no-repeat;
+
+            @media (min-width: 370px) {
+               background: url('/images/bg-desktop-dark.jpg') center;
+            }
+         }
+
+         .input-area {
+            background-color: $very-dark-grayish-blue;
+
+            .input {
+               color: $very-light-gray;
+               &::placeholder {
+                  color: $very-light-gray;
+               }
+            }
+
+            .input-button {
+               background-color: $dark-grayish-blue;
+               border-color: $dark-grayish-blue;
+
+               .input-button-top {
+                  color: $very-dark-blue;
+               }
+            }
+         }
+
+         .todo-list {
+            background-color: $very-dark-grayish-blue;
+
+            .list-item {
+               border-color: $dark-grayish-blue;
+               color: $very-light-gray;
+
+               .complete-btn {
+                  border-color: $dark-grayish-blue;
+               }
+            }
+
+            .bottom-list-area {
+               color: $very-light-gray;
+
+               .filters-desktop {
+                  .btn {
+                     color: $very-light-gray;
+                     &:hover { color: $bright-blue; }}
+                  .btn-selected {color: $bright-blue;}
+
+                  
+               }
+
+               .clear-completed {
+                  color: $very-light-gray;
+                  &:hover { color: $bright-blue; }
+               }
+            }
+         }
+
+         .filters-mobile {
+            background-color: $very-dark-grayish-blue;
+            
+            .btn {
+               color: $very-light-gray;
+               &:hover { color: $bright-blue; }
+            }
+            .btn-selected {color: $bright-blue;}
+         }
+
+         .bottom-text {color: $very-light-gray;}
+      }
+   }
+
+   &.dark-mode-no-transition {
+      background-color: $very-dark-blue;
+      transition: none;
+
+      .app {   
+         .background {
+            background: url('/images/bg-mobile-dark.jpg');
+
+            @media (min-width: 370px) {
+               background: url('/images/bg-desktop-dark.jpg') center;
+            }
+         }
+
+         .input-area {
+            background-color: $very-dark-grayish-blue;
+
+            .input {
+               color: $very-light-gray;
+               &::placeholder {
+                  color: $very-light-gray;
+               }
+            }
+
+            .input-button {
+               background-color: $dark-grayish-blue;
+               border-color: $dark-grayish-blue;
+
+               .input-button-top {
+                  color: $very-dark-blue;
+               }
+            }
+         }
+
+         .todo-list {
+            background-color: $very-dark-grayish-blue;
+
+            .list-item {
+               border-color: $dark-grayish-blue;
+               color: $very-light-gray;
+
+               .complete-btn {
+                  border-color: $dark-grayish-blue;
+               }
+            }
+
+            .bottom-list-area {
+               color: $very-light-gray;
+
+               .filters-desktop {
+                  .btn {
+                     color: $very-light-gray;
+                     &:hover { color: $bright-blue; }}
+                  .btn-selected {color: $bright-blue;}
+
+                  
+               }
+
+               .clear-completed {
+                  color: $very-light-gray;
+                  &:hover { color: $bright-blue; }
+               }
+            }
+         }
+
+         .filters-mobile {
+            background-color: $very-dark-grayish-blue;
+            
+            .btn {
+               color: $very-light-gray;
+               &:hover { color: $bright-blue; }
+            }
+            .btn-selected {color: $bright-blue;}
+         }
+
+         .bottom-text {color: $very-light-gray;}
+      }
+   }
+}
+
+.app {
+   width: 100%;
+   height: 100%;
+   max-width: 700px;
+   padding: 2.5rem 1.75rem;
+   font-family: 'Josefin Sans', sans-serif;
+
+   .background {
+      background: url('/images/bg-mobile-light.jpg');
+      top: 0;
+      left: 0;
+      width: 100vw;
+      position: absolute;
+      z-index: -1;
+      height: 24%;
+
+      @media (min-width: 700px) {
+         height: 30%;
+      }
+
+      @media (min-width: 370px) {
+         background: url('/images/bg-desktop-light.jpg') center;
+      }
+      
+
+      &-img {
+         top: 0;
+         left: 0;
+         width: 100%;
+         position: absolute;
+         z-index: -1;
+         height: 24%;
+
+
+      }
+   }
+
+   .bottom-text {
+      margin-top: 5rem;
+      text-align: center;
+      font-weight: 700;
+      opacity: .5;
+   }
+
+   .filters-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      background-color: $very-light-gray;
+      border-radius: 5px;
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      @media (min-width: 700px) {
+         display: none;   
+      }
+
+      .btn {
+         font-weight: 700;
+         opacity: .6;
+         border: none;
+         background-color: transparent;
+
+         &-selected {
+            opacity: 1;
+            color: $bright-blue;
+            transform: scale(1.05);
+            transition: all .2s;
+         }
+
+         &:hover {
+            cursor: pointer;
+            color: $bright-blue;
+            transform: scale(1.05);
+            opacity: 1;
+            transition: all .2s;
+         }
+      }
+   }
+}

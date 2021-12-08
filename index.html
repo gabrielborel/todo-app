@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<!-- FONT and CSS -->
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<title>Todo app</title>
+</head>
+<body data-body>
+	<main class="app">
+
+		<div class="background">
+			<!-- <img src="./images/bg-mobile-light.jpg" class="background-img" id="background"> -->
+		</div>
+
+		<div class="header">
+			<h1 class="title">Todo</h1>
+			<button class="theme-switcher" data-themeSwitcher-btn>
+				<img id="theme-switcher-icon" src="./images/icon-moon.svg" data-themeSwitcher-icon>
+			</button>
+		</div>
+
+		<form class="input-area">
+			<button class="input-button" data-create-button>
+				<span class="input-button-top">Create</span>
+			</button>
+			<input class="input" type="text" placeholder="Create a new todo ..." data-form-input required>
+		</form>
+
+		<div class="todo-list">	
+			<ul data-list></ul>
+			<div class="bottom-list-area">
+				<p class="items-left" data-left></p>
+				<div class="filters-desktop">
+					<button class="btn desk" data-all>All</button>
+					<button class="btn desk" data-active>Active</button>
+					<button class="btn desk" data-completed>Completed</button>
+				</div>
+				<button class="clear-completed" data-clear-completed>Clear Completed</button>
+			</div>
+		</div>
+
+		<div class="filters-mobile">
+			<button class="btn mob" data-all>All</button>
+			<button class="btn mob" data-active>Active</button>
+			<button class="btn mob" data-completed>Completed</button>
+		</div>
+	</main>
+
+	<script src="./js/main.js" type="module"></script>
+</body>
+</html>
