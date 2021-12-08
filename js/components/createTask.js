@@ -41,3 +41,6 @@ export const Task = (content, done, id) => {
 
    return task
 }
+
+const createTaskButton = document.querySelector('[data-create-button]')
+createTaskButton.addEventListener('click', handleNewTask)

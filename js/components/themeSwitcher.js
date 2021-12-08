@@ -1,6 +1,6 @@
 const body = document.querySelector('[data-body]')
 
-export const switchTheme = () => {
+const switchTheme = () => {
    body.classList.toggle('dark-mode')
 
    const themeSwitcherIcon = document.querySelector('[data-themeSwitcher-icon]')
@@ -19,10 +19,15 @@ export const switchTheme = () => {
    }
 }
 
-export const loadTheme = () => {
+const loadTheme = () => {
    const actualTheme = JSON.parse(localStorage.getItem('theme'))
 
    actualTheme ? 
       body.classList.add('dark-mode') 
       : body.classList.remove('dark-mode')
 }
+
+const themeSwitcherButton = document.querySelector('[data-themeSwitcher-btn]')
+themeSwitcherButton.addEventListener('click', switchTheme)
+
+loadTheme()

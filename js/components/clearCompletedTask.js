@@ -14,3 +14,6 @@ export const clearCompletedTasks = () => {
 
    loadTasks()
 }
+
+const clearCompletedTaskButton = document.querySelector('[data-clear-completed]')
+clearCompletedTaskButton.addEventListener('click', clearCompletedTasks)

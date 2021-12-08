@@ -66,3 +66,6 @@ function showCompletedTasks(key) {
          }
       })
 }
+
+filterTasks()
+loadLast()
